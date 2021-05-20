@@ -172,8 +172,3 @@ tables:
       - city
       - town
       - village
-      - hamlet
-      - suburb
-      - quarter
-      - neighbourhood
-      - isolated_dwelling
