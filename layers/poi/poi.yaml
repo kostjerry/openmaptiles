@@ -15,15 +15,15 @@ layer:
         and `kindergarten`. Or use the class `shop` to style all shops.
       values:
         shop:
-          subclass: ['mall', 'supermarket', 'department_store']
+          subclass: ['mall', 'department_store']
         college:
           subclass: ['university', 'college']
         lodging:
-          subclass: ['hotel', 'motel', 'guest_house', 'hostel']
+          subclass: ['hotel', 'motel', 'hostel']
         post:
-          subclass: ['post_box', 'post_office']
+          subclass: ['post_office']
         school:
-          subclass: ['school', 'kindergarten']
+          subclass: ['school']
         hospital:
           subclass: ['hospital', 'clinic']
         cemetery:

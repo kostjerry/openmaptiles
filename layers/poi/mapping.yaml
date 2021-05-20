@@ -8,10 +8,8 @@ def_poi_mapping_amenity: &poi_mapping_amenity
   - college
   - hospital
   - university
-  - post_box
   - post_office
   - school
-  - kindergarten
   - grave_yard
 
 # landuse values , see http://taginfo.openstreetmap.org/keys/landuse#values
@@ -27,7 +25,6 @@ def_poi_mapping_leisure: &poi_mapping_leisure
 def_poi_mapping_shop: &poi_mapping_shop
   - department_store
   - mall
-  - supermarket
 
 # sport values , see http://taginfo.openstreetmap.org/keys/sport#values
 def_poi_mapping_sport: &poi_mapping_sport
@@ -36,7 +33,6 @@ def_poi_mapping_sport: &poi_mapping_sport
 
 # tourism values , see http://taginfo.openstreetmap.org/keys/tourism#values
 def_poi_mapping_tourism: &poi_mapping_tourism
-  - guest_house
   - hostel
   - hotel
   - motel
