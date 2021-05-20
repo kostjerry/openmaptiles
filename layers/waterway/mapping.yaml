@@ -37,8 +37,8 @@ tables:
       type: bool
     mapping:
       waterway:
+      - stream
       - river
       - canal
-    filters:
-      reject:
-        is_tunnel: [true]
+      - drain
+      - ditch
