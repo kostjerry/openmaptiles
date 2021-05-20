@@ -89,6 +89,7 @@ services:
       MAX_ZOOM: ${MAX_ZOOM}
       # Control tilelive-copy threads
       COPY_CONCURRENCY: ${COPY_CONCURRENCY}
+      UV_THREADPOOL_SIZE: ${COPY_CONCURRENCY}
       #
 
   postserve:

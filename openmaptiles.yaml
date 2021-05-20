@@ -4,10 +4,8 @@ tileset:
     - layers/waterway/waterway.yaml
     - layers/landcover/landcover.yaml
     - layers/landuse/landuse.yaml
-    - layers/mountain_peak/mountain_peak.yaml
     - layers/park/park.yaml
     - layers/boundary/boundary.yaml
-    - layers/aeroway/aeroway.yaml
     - layers/transportation/transportation.yaml
     - layers/building/building.yaml
     - layers/water_name/water_name.yaml
@@ -16,6 +14,7 @@ tileset:
     - layers/housenumber/housenumber.yaml
     - layers/poi/poi.yaml
     - layers/aerodrome_label/aerodrome_label.yaml
+    - layers/traffic_signals/traffic_signals.yaml
   name: OpenMapTiles
   version: 3.12.1
   id: openmaptiles

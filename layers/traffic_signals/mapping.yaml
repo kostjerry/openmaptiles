@@ -1,0 +1,15 @@
+
+tables:
+
+  # etldoc: imposm3 -> osm_traffic_signals
+  traffic_signals:
+    type: point
+    columns:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    type_mappings:
+      points:
+        highway:
+        - traffic_signals

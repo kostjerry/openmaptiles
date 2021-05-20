@@ -119,6 +119,5 @@ tables:
       type: [boundary]
     filters:
       require:
-        #admin_level: ['2']
-        admin_level: [__any__]
+        admin_level: ['2', '3']
         claimed_by: [__any__]
