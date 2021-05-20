@@ -14,46 +14,23 @@ tables:
       type: mapping_key
     mapping:
       landuse:
-      - allotments
-      - farm
-      - farmland
-      - orchard
-      - plant_nursery
-      - vineyard
-      - grass
-      - grassland
-      - meadow
       - forest
-      - village_green
-      - recreation_ground
+      - grass
+      - meadow
+      - allotments
       # There are 600 parks tagged with landuse=park instead of leisure=park
       - park
+      - village_green
+      - recreation_ground
       natural:
       - wood
-      - wetland
       - fell
       - grassland
       - heath
       - scrub
       - tundra
-      - glacier
-      - bare_rock
-      - scree
-      - beach
-      - sand
-      - dune
       leisure:
       - park
       - garden
       - golf_course
-      wetland:
-      - bog
-      - swamp
-      - wet_meadow
-      - marsh
-      - reedbed
-      - saltern
-      - tidalflat
-      - saltmarsh
-      - mangrove
     type: polygon
