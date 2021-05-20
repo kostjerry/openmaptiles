@@ -13,3 +13,5 @@ tables:
       points:
         highway:
         - traffic_signals
+        traffic_signals:
+        - __any__
