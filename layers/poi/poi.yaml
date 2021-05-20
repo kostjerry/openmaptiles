@@ -7,8 +7,6 @@ layer:
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
   fields:
     name: The OSM [`name`](http://wiki.openstreetmap.org/wiki/Key:name) value of the POI.
-    name_en: English name `name:en` if available, otherwise `name`.
-    name_de: German name `name:de` if available, otherwise `name` or `name:en`.
     class:
       description: |
         More general classes of POIs. If there is no more general `class` for the `subclass`
@@ -17,83 +15,21 @@ layer:
         and `kindergarten`. Or use the class `shop` to style all shops.
       values:
         shop:
-          subclass: ['accessories', 'antiques', 'beauty', 'bed', 'boutique', 'camera', 'carpet', 'charity', 'chemist',
-                     'coffee', 'computer', 'convenience', 'copyshop', 'cosmetics', 'garden_centre', 'doityourself',
-                     'erotic', 'electronics', 'fabric', 'florist', 'frozen_food', 'furniture', 'video_games', 'video',
-                     'general', 'gift', 'hardware', 'hearing_aids', 'hifi', 'ice_cream', 'interior_decoration',
-                     'jewelry', 'kiosk', 'lamps', 'mall', 'massage', 'motorcycle', 'mobile_phone', 'newsagent',
-                     'optician', 'outdoor', 'perfumery', 'perfume', 'pet', 'photo', 'second_hand', 'shoes', 'sports',
-                     'stationery', 'tailor', 'tattoo', 'ticket', 'tobacco', 'toys', 'travel_agency', 'watches',
-                     'weapons', 'wholesale']
-        town_hall:
-          subclass: ['townhall', 'public_building', 'courthouse', 'community_centre']
-        golf:
-          subclass: ['golf', 'golf_course', 'miniature_golf']
-        fast_food:
-          subclass: ['fast_food', 'food_court']
-        park:
-          subclass: ['park', 'bbq']
-        bus:
-          subclass: ['bus_stop', 'bus_station']
-        railway:
-          - __AND__:
-              subclass: 'station'
-              mapping_key: 'railway'
-          - subclass: ['halt', 'tram_stop', 'subway']
-        aerialway:
-          __AND__:
-            subclass: 'station'
-            mapping_key: 'aerialway'
-        entrance:
-          subclass: ['subway_entrance', 'train_station_entrance']
-        campsite:
-          subclass: ['camp_site', 'caravan_site']
-        laundry:
-          subclass: ['laundry', 'dry_cleaning']
-        grocery:
-          subclass: ['supermarket', 'deli', 'delicatessen', 'department_store', 'greengrocer', 'marketplace']
-        library:
-          subclass: ['books', 'library']
+          subclass: ['mall', 'supermarket', 'department_store']
         college:
           subclass: ['university', 'college']
         lodging:
-          subclass: ['hotel', 'motel', 'bed_and_breakfast', 'guest_house', 'hostel', 'chalet', 'alpine_hut', 'dormitory']
-        ice_cream:
-          subclass: ['chocolate', 'confectionery']
+          subclass: ['hotel', 'motel', 'guest_house', 'hostel']
         post:
           subclass: ['post_box', 'post_office']
-        cafe:
-          subclass: ['cafe']
         school:
           subclass: ['school', 'kindergarten']
-        alcohol_shop:
-          subclass: ['alcohol', 'beverages', 'wine']
-        bar:
-          subclass: ['bar', 'nightclub']
-        harbor:
-          subclass: ['marina', 'dock']
-        car:
-          subclass: ['car', 'car_repair', 'car_parts', 'taxi']
         hospital:
-          subclass: ['hospital', 'nursing_home', 'clinic']
+          subclass: ['hospital', 'clinic']
         cemetery:
           subclass: ['grave_yard', 'cemetery']
-        attraction:
-          subclass: ['attraction', 'viewpoint']
-        beer:
-          subclass: ['biergarten', 'pub']
-        music:
-          subclass: ['music', 'musical_instrument']
         stadium:
           subclass: ['american_football', 'stadium', 'soccer']
-        art_gallery:
-          subclass: ['art', 'artwork', 'gallery', 'arts_centre']
-        clothing_store:
-          subclass: ['bag', 'clothes']
-        swimming:
-          subclass: ['swimming_area', 'swimming']
-        castle:
-          subclass: ['castle', 'ruins']
     subclass:
       description: |
           Original value of either the
@@ -109,7 +45,6 @@ layer:
           [`station`](http://wiki.openstreetmap.org/wiki/Key:station),
           [`religion`](http://wiki.openstreetmap.org/wiki/Key:religion),
           [`tourism`](http://wiki.openstreetmap.org/wiki/Key:tourism),
-          [`aerialway`](http://wiki.openstreetmap.org/wiki/Key:aerialway),
           [`building`](http://wiki.openstreetmap.org/wiki/Key:building),
           [`highway`](http://wiki.openstreetmap.org/wiki/Key:highway)
           or [`waterway`](http://wiki.openstreetmap.org/wiki/Key:waterway)
@@ -119,31 +54,12 @@ layer:
         local relative importance of a POI within it's cell in the grid. This can be used to reduce label density at *z14*.
         Since all POIs already need to be contained at *z14* you can use `less than rank=10` epxression to limit
         POIs. At some point like *z17* you can show all POIs.
-    agg_stop:
-      description: |
-          Experimental feature! Indicates main platform of public transport
-          stops (buses, trams, and subways). Grouping of platforms is
-          implemented using
-          [`uic_ref`](http://wiki.openstreetmap.org/wiki/Key:uic_ref) tag that
-           is not used worldwide.
-      values: [1]
-    level:
-      description: |
-          Original value of [`level`](http://wiki.openstreetmap.org/wiki/Key:level) tag.
-    layer:
-      description: |
-          Original value of [`layer`](http://wiki.openstreetmap.org/wiki/Key:layer) tag.
-    indoor:
-      description: |
-          Original value of [`indoor`](http://wiki.openstreetmap.org/wiki/Key:indoor) tag.
-      values:
-      - 1
   datasource:
     geometry_field: geometry
     key_field: osm_id
     key_field_as_attribute: no
     srid: 900913
-    query: (SELECT osm_id, geometry, name, name_en, name_de, {name_languages}, class, subclass, agg_stop, layer, level, indoor, rank FROM layer_poi(!bbox!, z(!scale_denominator!), !pixel_width!)) AS t
+    query: (SELECT osm_id, geometry, name, class, subclass, rank FROM layer_poi(!bbox!, z(!scale_denominator!), !pixel_width!)) AS t
 schema:
   - ./public_transport_stop_type.sql
   - ./class.sql

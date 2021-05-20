@@ -17,10 +17,8 @@ layer:
           or [`waterway`](http://wiki.openstreetmap.org/wiki/Key:waterway) tag.
       values:
       - cemetery
-      - hospital
       - stadium
       - pitch
-      - playground
   datasource:
     geometry_field: geometry
     query: (SELECT geometry, class FROM layer_landuse(!bbox!, z(!scale_denominator!))) AS t

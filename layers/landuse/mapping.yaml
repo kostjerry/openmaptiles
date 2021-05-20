@@ -72,9 +72,6 @@ tables:
     mapping:
       landuse:
       - cemetery
-      amenity:
-      - hospital
       leisure:
       - stadium
       - pitch
-      - playground
