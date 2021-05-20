@@ -19,3 +19,10 @@ tables:
       polygons:
         addr:housenumber:
         - __any__
+    tags:
+      include: [building]
+    filters:
+      require:
+        building: [__any__]
+      reject:
+        building: ["no","none","No",none]
