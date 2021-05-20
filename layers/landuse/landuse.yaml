@@ -16,31 +16,11 @@ layer:
           [`place`](http://wiki.openstreetmap.org/wiki/Key:place)
           or [`waterway`](http://wiki.openstreetmap.org/wiki/Key:waterway) tag.
       values:
-      - railway
       - cemetery
-      - military
-      - residential
-      - commercial
-      - industrial
-      - garages
-      - retail
-      - bus_station
-      - school
-      - university
-      - kindergarten
-      - college
-      - library
       - hospital
       - stadium
       - pitch
       - playground
-      - track
-      - theme_park
-      - zoo
-      - suburb
-      - quarter
-      - neighbourhood
-      - dam
   datasource:
     geometry_field: geometry
     query: (SELECT geometry, class FROM layer_landuse(!bbox!, z(!scale_denominator!))) AS t
