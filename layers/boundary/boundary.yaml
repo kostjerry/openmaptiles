@@ -25,7 +25,7 @@ layer:
   buffer_size: 4
   datasource:
     geometry_field: geometry
-    query: (SELECT geometry, admin_level, disputed, claimed_by FROM layer_boundary(!bbox!, z(!scale_denominator!)) WHERE disputed <> 1) AS t
+    query: (SELECT geometry, admin_level, disputed, claimed_by FROM layer_boundary(!bbox!, z(!scale_denominator!)) WHERE disputed <> 1 AND admin_level IN (1, 2)) AS t
 schema:
   - ./boundary_name.sql
   - ./boundary.sql
