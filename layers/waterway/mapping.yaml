@@ -39,6 +39,3 @@ tables:
       waterway:
       - river
       - canal
-    filters:
-      reject:
-        tunnel: ["yes"]

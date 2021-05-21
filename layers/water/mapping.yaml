@@ -83,7 +83,6 @@ tables:
     filters:
       reject:
         covered: ["yes"]
-        tunnel: ["yes"]
     mapping:
       landuse:
       - reservoir
