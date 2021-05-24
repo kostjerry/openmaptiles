@@ -15,21 +15,7 @@ def_poi_mapping_amenity: &poi_mapping_amenity
 # landuse values , see http://taginfo.openstreetmap.org/keys/landuse#values
 def_poi_mapping_landuse: &poi_mapping_landuse
   - cemetery
-
-# leisure values , see http://taginfo.openstreetmap.org/keys/leisure#values
-def_poi_mapping_leisure: &poi_mapping_leisure
-  - playground
-  - stadium
-
-# shop values , see http://taginfo.openstreetmap.org/keys/shop#values
-def_poi_mapping_shop: &poi_mapping_shop
-  - department_store
-  - mall
-
-# sport values , see http://taginfo.openstreetmap.org/keys/sport#values
-def_poi_mapping_sport: &poi_mapping_sport
-  - american_football
-  - soccer
+  - retail
 
 # tourism values , see http://taginfo.openstreetmap.org/keys/tourism#values
 def_poi_mapping_tourism: &poi_mapping_tourism
@@ -88,10 +74,15 @@ def_poi_fields: &poi_fields
 def_poi_mapping: &poi_mapping
   amenity: *poi_mapping_amenity
   landuse: *poi_mapping_landuse
-  leisure: *poi_mapping_leisure
-  shop: *poi_mapping_shop
-  sport: *poi_mapping_sport
+  shop:
+  - department_store
+  - mall
   tourism: *poi_mapping_tourism
+  healthcare:
+  - hospital
+  - clinic
+  - centre
+  - birthing_center
 
 tables:
   # etldoc: imposm3 -> osm_poi_point

@@ -15,7 +15,7 @@ layer:
         and `kindergarten`. Or use the class `shop` to style all shops.
       values:
         shop:
-          subclass: ['mall', 'department_store']
+          subclass: ['mall', 'department_store', 'retail']
         college:
           subclass: ['university', 'college']
         lodging:
@@ -25,11 +25,9 @@ layer:
         school:
           subclass: ['school']
         hospital:
-          subclass: ['hospital', 'clinic']
+          subclass: ['hospital', 'clinic', 'centre', 'birthing_center']
         cemetery:
           subclass: ['grave_yard', 'cemetery']
-        stadium:
-          subclass: ['american_football', 'stadium', 'soccer']
     subclass:
       description: |
           Original value of either the
